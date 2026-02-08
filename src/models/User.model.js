@@ -17,6 +17,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    activation_token: {
+        type: String
+    },
     otp: {
         type: String
     },
@@ -26,6 +29,9 @@ const userSchema = new Schema({
     is_verified: {
         type: Boolean,
         default: false
+    },
+    refresh_token: {
+        type: String
     }
 }, {
     versionKey: false,

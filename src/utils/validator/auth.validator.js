@@ -16,12 +16,7 @@ const loginValidator = Joi.object({
     password: Joi.string().required()
 });
 
-const profileVerifiedValidator = Joi.object({
-    email: Joi.string().email().required(),
-    otp: Joi.string().max(6).required()
-});
-
-const resendOtpOrForgotPasswordValidator = Joi.object({
+const forgotPasswordValidator = Joi.object({
     email: Joi.string().email().required()
 });
 
@@ -30,4 +25,8 @@ const changePasswordValidator = Joi.object({
     new_password: Joi.string().required()
 });
 
-module.exports = { registerValidator, loginValidator, profileVerifiedValidator, resendOtpOrForgotPasswordValidator, changePasswordValidator }
+const activateValidator = Joi.object({
+    refresh_token: Joi.string().required()
+})
+
+module.exports = { registerValidator, loginValidator, forgotPasswordValidator, changePasswordValidator, activateValidator }
